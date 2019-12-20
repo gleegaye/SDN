@@ -75,3 +75,87 @@ if '__main__' == __name__:
   Link( h5, s10 )
 
   net.build()
+
+  h1.cmd("ifconfig h1-eth0 0")
+
+  h2.cmd("ifconfig h2-eth0 0")
+
+  h3.cmd("ifconfig h3-eth0 0")
+
+  h4.cmd("ifconfig h4-eth0 0")
+
+  h5.cmd("ifconfig h5-eth0 0")
+
+  s7.cmd("ifconfig s7-eth0 0")
+
+  s7.cmd("ifconfig s75-eth1 0")
+
+  s7.cmd("ifconfig s7-eth2 0")
+
+  s8.cmd("ifconfig s8-eth0 0")
+
+  s8.cmd("ifconfig s8-eth1 0")
+
+  s8.cmd("ifconfig s8-eth2 0")
+
+  s7.cmd("vconfig add s7-eth2 10")
+
+  s7.cmd("vconfig add s7-eth2 20")
+
+  s8.cmd("vconfig add s8-eth2 10")
+
+  s8.cmd("vconfig add s8-eth2 20")
+
+  s7.cmd("ifconfig s7-eth2.10 up")
+
+  s7.cmd("ifconfig s7-eth2.20 up")
+
+  s8.cmd("ifconfig s8-eth2.10 up")
+
+  s8.cmd("ifconfig s8-eth2.20 up")
+
+  s7.cmd("brctl addbr brvlan10")
+
+  s7.cmd("brctl addbr brvlan20")
+
+  s7.cmd("brctl addif brvlan10 s7-eth0")
+
+  s7.cmd("brctl addif brvlan10 s7-eth2.10")
+
+  s7.cmd("brctl addif brvlan20 s7-eth1")
+
+  s7.cmd("brctl addif brvlan20 s7-eth2.20")
+
+  s7.cmd("ifconfig brvlan10 up")
+
+  s7.cmd("ifconfig brvlan20 up")
+
+  s8.cmd("brctl addbr brvlan10")
+
+  s8.cmd("brctl addbr brvlan20")
+
+  s8.cmd("brctl addif brvlan10 s8-eth0")
+
+  s8.cmd("brctl addif brvlan10 s8-eth2.10")
+
+  s8.cmd("brctl addif brvlan20 s8-eth1")
+
+  s8.cmd("brctl addif brvlan20 s8-eth2.20")
+
+  s8.cmd("ifconfig brvlan10 up")
+
+  s8.cmd("ifconfig brvlan20 up")
+
+  h1.cmd("ifconfig h1-eth0 10.0.10.1 netmask 255.255.255.0")
+
+  h2.cmd("ifconfig h2-eth0 10.0.10.2 netmask 255.255.255.0")
+
+  h3.cmd("ifconfig h3-eth0 10.0.10.3 netmask 255.255.255.0")
+
+  h4.cmd("ifconfig h4-eth0 10.0.10.4 netmask 255.255.255.0")
+
+  h5.cmd("ifconfig h5-eth0 10.0.10.5 netmask 255.255.255.0")
+
+  CLI(net)
+
+  net.stop()
