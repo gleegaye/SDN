@@ -154,7 +154,7 @@ if '__main__' == __name__:
 
   h4.cmd("ifconfig h4-eth0 10.0.10.4 netmask 255.255.255.0")
 
-  h5.cmd("ifconfig h4-eth0 10.0.10.5 netmask 255.255.255.0")
+  h5.cmd("ifconfig h5-eth0 10.0.10.5 netmask 255.255.255.0")
 
   CLI(net)
 
